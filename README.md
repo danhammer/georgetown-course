@@ -21,6 +21,19 @@ Jeff and Dan worked together as White House Presidential Innovation Fellows at N
 
 Mondays, 6:30pm to 9:00pm
 
+1. January 11 (Wednesday)
+2. January 23
+3. January 30
+4. February 6
+5. February 13
+6. February 27 
+7. March 13
+8. March 20
+9. March 27
+10. April 3
+11. April 10
+12. April 24 
+13. May 1
 
 ### Course outline
 
