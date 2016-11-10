@@ -1,0 +1,11 @@
+% Lecture 1: Data manipulation
+% Dan Hammer
+% November 6, 2016
+
+Data manipulation can mean a lot of different things to a lot of different people.  Here, we are mainly working with rectangular data, where a rows represent dataset entries and columns represent attributes of the entries.  
+
+The most powerful functions for data manipulation are `sort`, `reshape`, `collapse`, and `merge`.  With these functions, you can quickly assemble nearly all 
+
+```{r comment=NA, cache=TRUE}
+(X <- data.frame(id=c(1,1,2,2), t=c(1,2,1,2), x1=c(5,3,6,2), x2=c(6,5,1,4)))
+```
