@@ -1,6 +1,6 @@
 ## Introduction to Data Science for Public Policy 
 
-The Introduction to Data Science for Public Policy is a survey course of the fundamentals of data science.  The course is focused on evaluating and analyzing public policy, telling stories with data to make compelling and fact-based arguments.  
+The Introduction to Data Science for Public Policy (**PPOL 670-01**) is a survey course of the fundamentals of data science.  The course is focused on evaluating and analyzing public policy, telling stories with data to make compelling and fact-based arguments.  
 
 
 The objective of the course to equip students with the skills to tell stories with data and drive action.  Public policy is part of a large and sprawling social system.  Parsing causality from a system of variables where everything is related requires a scalpel.  This refined approach can be assembled from pre-written code and routines; but it still requires skilled assembly.  We will teach an approach that leverages analytical routines that have already been written.  The value of this course is in the mortar, not the bricks.  
