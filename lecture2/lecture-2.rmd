@@ -1,11 +1,96 @@
-% Lecture 1: Data manipulation
-% Dan Hammer
-% November 6, 2016
+## Lecture 2: Data manipulation
 
-Data manipulation can mean a lot of different things to a lot of different people.  Here, we are mainly working with rectangular data, where a rows represent dataset entries and columns represent attributes of the entries.  
+We mainly work with rectangular data.  Rows of the data table are analytical units, like countries or voters.  Columns are attributes of the units, like GDP or gender.  An example of a data table would be voter composition by county, with information on population, ethnicity, and economic characteristics.  Suppose we want a particular view of the data table.  Specifically, suppose we wanted to rank all Michigan counties by share of minority voters.  Or suppose we wanted to aggregate the counties to find the U.S. state with the highest per capita income.  Finally, suppose we wanted to add and analyze the characteristics over time.  All of these *views* on the data table require operations to pivot, merge, aggregate, and sort the raw information.  
 
-The most powerful functions for data manipulation are `sort`, `reshape`, `collapse`, and `merge`.  With these functions, you can quickly assemble nearly all 
+We will review the most powerful functions for data manipulation in the lecture: `sort`, `reshape`, `collapse`, and `merge`.  A mastery of these basic operations can yield just about any derived data set from a structured table in `R`.
+
+### Indexing and Sorting
+
+Consider a data table with two individuals, indexed by the variable `id`, over two time periods, indexed by the variable `t`.  Each individual has a different record for each time period, with observations on income (`income`) and voter preference (`vote`) on a 1-10 scale where higher numbers indicate more progressive voting.  A fake data table is stored in variable `X`:
 
 ```{r comment=NA, cache=TRUE}
-(X <- data.frame(id=c(1,1,2,2), t=c(1,2,1,2), x1=c(5,3,6,2), x2=c(6,5,1,4)))
+(X <- data.frame(id=c(1,1,2,2), t=c(1,2,1,2), income=c(50,55,101,123), vote=c(8,7,4,3)))
+```
+
+We will now perform data acrobatics to collect different views of the data table.
+
+##### Extract second record
+```{r comment=NA, cache=TRUE}
+X[2, ] # extract second row
+```
+
+##### Extract income for all records
+```{r comment=NA, cache=TRUE}
+X[, 3] # extract third column
+X[, "income"] # extract column with "income" label
+X[["income"]] # list syntax to extract column from data frame
+X$income # compact version of data column manipulation
+```
+
+##### Extract multiple records
+```{r comment=NA, cache=TRUE}
+print(1:3) # index range
+X[1:3, ] # apply the index range to extract rows
+X[c(1, 3), ] # specific indices
+```
+
+##### Extract multiple columns
+```{r comment=NA, cache=TRUE}
+X[ , 3:4] # extract multiple columns
+X[ , c("income", "vote")] # multiple column labels
+```
+
+##### Extract records by attribute value
+```{r comment=NA, cache=TRUE}
+(idx <- X[["income"]] > 50) # indices of records with income greater than 50
+X[idx, ] # select the indices
+```
+
+##### Reorder records
+```{r comment=NA, cache=TRUE}
+X[c(2, 4, 3, 1), ] # random ordering, note row labels
+X[c(4, 3, 2, 1), ] # backwards ordering (by force)
+```
+
+##### Ordering and sorting
+```{r comment=NA, cache=TRUE}
+order(X$vote)
+X[order(X$vote), ] # order records by vote
+X[order(-X$vote), ] # order records by vote, decreasing
+X[order(X$vote, decreasing=TRUE), ] # order records by vote, decreasing
+```
+
+##### Order by multiple columns
+```{r comment=NA, cache=TRUE}
+X[order(X$t, X$vote), ] # order records, first by time period and then by vote
+X[order(X$t, -X$vote), ] # order records, first by time period and then dec. by vote
+```
+
+#### Exercises 2.1
+
+1. Extract records with income greater than 120 in the second time period
+2. Extract records with vote greater than 5 and income less than 51
+
+
+### Reshape
+
+Dealing with the time dimension
+
+
+```{r comment=NA, cache=TRUE}
+(wide <- reshape(X, idvar="id", timevar="t", direction="wide"))
+```
+
+You will have to extend the basic `reshape` commands with the **reshape** library.  Run the command `install.packages("reshape")` before calling the library.
+
+```{r comment=NA, cache=TRUE}
+library(reshape)
+(llong <- melt(X, id=c("id", "t")))
+```
+
+### Collapse
+```{r comment=NA, cache=TRUE}
+aggregate(X, by=list(X$t), FUN=mean)
+(aggdata <- aggregate(X, by=list(X$id), FUN=mean))
+aggdata[ , c("id", "income", "vote")]
 ```
