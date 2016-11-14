@@ -1,0 +1,56 @@
+---
+title: "Lecture 3: Data Quality "
+output: html_document
+---
+
+## Lecture 3: Data Quality
+
+The quality of data can be a selling point or achilles heel of a data science project.
+
+Checking data quality
+
+The objective of this lecture is to handle missing values appropriately and script visual checks to find errors introduced in data input/output. We will also start to view computational optimization techniques, like taking advantage of multiple cores for heavy duty operations (parallel processing).
+
+##### Create a random dataset
+
+Consider a dataset of *n* individuals froma  community
+```{r}
+
+n = 10000
+
+set.seed(123)
+df <- data.frame(id=seq(1,n,1), 
+                
+                age = sample(21:65,n, replace=T), 
+                education = sample(c("High School","High School","High School","College","College","Graduate",NA),n,replace=T),
+                gender = sample(c("M","F","-999"),n,replace=T)
+                )
+
+```
+
+##### Examine dataset
+```{r}
+summary(df)
+str(df)
+```
+
+
+##### 
+```{r}
+table(df$education)
+table(df$education, useNA = "always")
+```
+
+
+###Exercise 3.1
+GHCN-M: Missing values analysis in matrix of weather anomalies from 1880 to Present
+
+
+Get data: [NOAA GHCN-M](https://www.kaggle.com/noaa/global-historical-climatology-network)
+
+```{r}
+
+```
+
+Weather: Matching human-reported weather events to radar events over time and space
+
