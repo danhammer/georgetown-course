@@ -104,11 +104,24 @@ The objective of this lecture is to handle missing values appropriately and scri
 - Weather: Matching human-reported weather events to radar events over time and space
 
 
+##### Lecture 4: Exploratory Data Analysis
+[ ]
+
+
+###### Lecture objectives
+
+1. 
+
+###### Example applications	
+
+-
+
+
 ##### Section 2: Data Analysis + Modeling
 
 The use case drives the technique. In public policy, data can be used to support evaluation of programs to understand causal mechanisms (e.g. retrospective focus) or enable the creation of data-rooted products that drive action (e.g. deployed applications). Machine learning and data analysis enables both uses of data and will be the focus of the next five courses
 
-###### Lecture 4: Introduction to Supervised Learning 
+###### Lecture 5: Introduction to Supervised Learning 
 
 Supervised learning is the most relied upon class of techniques that enable causal inference but also deployed precision policy. How does changing one variable independently impact another variable?  We begin to introduce basic regression analysis, correlation coefficients, ordinary least squares, and the relationship between the concepts.  Note that this is a very cursory review, and the deep assumptions are not tested or expounded upon.
 
@@ -132,7 +145,7 @@ Supervised learning is the most relied upon class of techniques that enable caus
 - Labor and wage analysis, innate ability. (David Card data set.)
 - Economic data from BEA
 
-##### Lecture 5: Simulations, selection bias 
+##### Lecture 6: Simulations, selection bias 
 
 Formal statistics offers methods to calculate closed-form, analytical answers to the limits of OLS regression.  Data science offers a more immediate and arguably a more accessible solution: simulate conditions and examine the outcomes.  We begin to use the early visualizations techniques taught in a previous lecture for analysis.
 
@@ -145,7 +158,7 @@ Formal statistics offers methods to calculate closed-form, analytical answers to
 
 - TBD
 
-##### Lecture 6: Regression discontinuity and difference-in-difference estimation
+##### Lecture 7: Regression discontinuity and difference-in-difference estimation
 
 An introduction to assessing the causal impact of public policy.
 
@@ -161,7 +174,7 @@ An introduction to assessing the causal impact of public policy.
 
 - TBD
 
-##### Lecture 7: Classification techniques 
+##### Lecture 8: Classification techniques 
 
 Classification models are one of the workhorses of data science. Classifiers enables data-driven applications such as risk scoring, lawsuit outcome prediction, marketing lead generation, facial detection and computer vision, spam filtering, among other use cases.  This session will focus on the fundamentals of classification models, types of models, and daily applications.
 
@@ -179,7 +192,7 @@ Confusion matrix, TPR, TNR, AUC
 
 - Credit Card Default Dataset (UCI/Kaggle)
 
-##### Lecture 8: Unsupervised learning 
+##### Lecture 9: Unsupervised learning 
 
 No, this is not an independent study session. Unsupervised learning techniques such as clustering and principal components analysis helps to identify recognizable patterns when no labels are provided. In sales and recruitment offices, customer segmentation may use current customer data, then use clustering techniques to identify k-number of distinct customer profiles. In resourceful law firms, data scientists may develop topic modeling algorithms to automatically tag and cluster hundreds of thousands of documents for improved search. This session will focus on clustering methodologies that are commonly employed in applied research.
 
@@ -201,7 +214,7 @@ No, this is not an independent study session. Unsupervised learning techniques s
 
 Beyond the data preparation and modeling, the ‘presentation layer’ is the glue that will allow a data science project stick with target audiences. Often times, presentation is graphical and relies upon a rich ecosystem of visualization, web services, and interactive applications to communicate pertinent issues.
 
-##### Lecture 9: Data storytelling through graphical representation
+##### Lecture 10: Data storytelling through graphical representation
 
 Often times, the model is not enough to communicate the value of the data analysis. A well-designed visualization can illustrate patterns and allow target audiences to establish a connection with the analytical effort at hand. 
 
@@ -217,7 +230,7 @@ Often times, the model is not enough to communicate the value of the data analys
 - Global trade flows: network map
 
 
-##### Lecture 10: Web service APIs and spatial data
+##### Lecture 11: Web service APIs and spatial data
 
 There are many cases where you will rely on data or services that aren’t stored or build on your local machine, but rather are exposed as web service application programming interfaces (APIs).  These are the components of modern software development, and we will teach how to find and utilize these services from within the R programming environment.  We use this lecture as an opportunity to introduce spatial data within R by interacting with an API for geographic data.
 
@@ -236,7 +249,7 @@ There are many cases where you will rely on data or services that aren’t store
 - Identifying the characteristics of farmers’ markets in the Southwest United States.
 
 
-##### Lecture 11:  Spatial Data and Maps
+##### Lecture 12:  Spatial Data and Maps
 
 The state of data is rapidly expanding in two principal directions: transactional-level and spatially. Maps are the principal mode of representing spatial data, which relies upon different types of GIS formats (e.g. shapefiles, raster, GeoJSON) and presentation medium. This lecture dives into spatial considerations in data science.
 
@@ -254,7 +267,7 @@ The state of data is rapidly expanding in two principal directions: transactiona
 - Chicago crime data
 
 
-##### Lecture 12:  Export results and interactivity
+##### Lecture 13:  Export results and interactivity
 
 Often times, users like to interact with a product as opposed to reading curated results. Enter interactivity -- a well-proven mode of displaying results.
 
