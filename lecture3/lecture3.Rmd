@@ -10,6 +10,7 @@ The quality of data can be a selling point or achilles heel of a data science pr
 Checking data quality
 - Missingness
 - Standardized values
+- Visual checks
 
 The objective of this lecture is to handle missing values appropriately and script visual checks to find errors introduced in data input/output. We will also start to view computational optimization techniques, like taking advantage of multiple cores for heavy duty operations (parallel processing).
 
@@ -119,16 +120,15 @@ count <- lapply(5:ncol(df), FUN = missing)
 ```
 
 Since lapply returns a list object, we'll need to apply unlist() to convert the object into a vector, then add it into a data frame with row labels for each month.
+
 ```{r}
 count <- data.frame(month = 1:100, pct_missing = unlist(count))
 plot(count)
 ```
 
 
-###Exercise 3.1
+###Exercise 3.1: 
 GHCN-M: Missing values analysis in matrix of weather anomalies from 1880 to Present
-
-
 Get data: [NOAA GHCN-M](https://www.kaggle.com/noaa/global-historical-climatology-network)
 
 ```{r}
